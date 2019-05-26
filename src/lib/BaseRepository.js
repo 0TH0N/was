@@ -13,7 +13,6 @@ export default class {
       throw new Error('Entity is already exist');
     }
     this.data.push(entity);
-    Object.keys(entity).forEach(prop => console.log(entity[prop]));
     return true;
   }
 
