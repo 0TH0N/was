@@ -1,7 +1,7 @@
-import BaseProduct from './BaseProduct';
+import BaseEntity from '../lib/BaseEntity';
 
 
-export default class PhysicalProduct extends BaseProduct {
+export default class Product extends BaseEntity {
   constructor(article, name, weight, length, width, heigth, comingCost, receiptDate, comment) {
     super(comment);
     this.article = article;

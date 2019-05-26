@@ -1,4 +1,4 @@
-import BaseEntity from '../../lib/BaseEntity';
+import BaseEntity from '../lib/BaseEntity';
 
 export default class BaseDocument extends BaseEntity {
   constructor(name, comment) {
