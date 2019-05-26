@@ -1,12 +1,14 @@
-import DocumentRepository from './DocumentRepository';
-import ProductRepository from './ProductRepository';
-import UserRepository from './UserRepository';
-import WarehouseRepository from './WarehouseRepository';
+import DocumentsRepository from './DocumentsRepository';
+import ProductsRepository from './ProductsRepository';
+import UsersRepository from './UsersRepository';
+import WarehousesRepository from './WarehousesRepository';
+import ThingsRepository from './ThingsRepository';
 
 
 export default {
-  DocumentRepository,
-  ProductRepository,
-  UserRepository,
-  WarehouseRepository,
+  DocumentsRepository,
+  ProductsRepository,
+  UsersRepository,
+  WarehousesRepository,
+  ThingsRepository,
 };

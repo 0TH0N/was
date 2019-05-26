@@ -13,6 +13,7 @@ export default class {
       throw new Error('Entity is already exist');
     }
     this.data.push(entity);
+    Object.keys(entity).forEach(prop => console.log(entity[prop]));
     return true;
   }
 
@@ -33,7 +34,7 @@ export default class {
   }
 
   find(id) {
-    const result = this.data.find(entity => entity.id === id);
-    return result === -1 ? null : result;
+    const result = _.filter(this.data, entity => entity.id === id);
+    return result.length === 0 ? null : result[0];
   }
 }
