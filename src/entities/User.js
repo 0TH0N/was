@@ -2,7 +2,7 @@ import StateMachine from 'javascript-state-machine';
 import BaseEntity from '../lib/BaseEntity';
 
 export default class User extends BaseEntity {
-  constraints = {
+  static constraints = {
     type: User,
     properties: {
       role: { type: 'string', minLength: 1 },

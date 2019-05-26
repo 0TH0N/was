@@ -5,9 +5,10 @@ export default class UserService extends BaseService {
   createUser(role, firstName, lastName, login, password, comment) {
     const user = new this.entities.User(role, firstName,
       lastName, login, password, comment);
-    const errors = inspector.validate(user.constraints, user);
-    if (!errors.valid) {
-      return [null, errors];
+    const { constraints } = this.entities.User;
+    const answer = inspector.validate(constraints, user);
+    if (!answer.valid) {
+      return [null, answer.error];
     }
     this.repositories.usersRepository.save(user);
     return [user, null];
@@ -18,9 +19,10 @@ export default class UserService extends BaseService {
     Object.keys(updatingInfo).forEach((propName) => {
       user[propName] = updatingInfo[propName];
     });
-    const errors = inspector.validate(user.constraints, user);
-    if (!errors.valid) {
-      return [null, errors];
+    const { constraints } = this.entities.User;
+    const answer = inspector.validate(constraints, user);
+    if (!answer.valid) {
+      return [null, answer.error];
     }
     this.repositories.usersRepository.update(user);
     return [user, null];
