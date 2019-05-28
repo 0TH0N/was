@@ -9,18 +9,7 @@ export default class {
   }
 
   save(entity) {
-    if (this.data.indexOf(entity) !== -1) {
-      throw new Error('Entity is already exist');
-    }
     this.data.push(entity);
-    return true;
-  }
-
-  update(entity) {
-    if (_.findIndex(this.data, item => (item.id === entity.id)) === -1) {
-      throw new Error('Entity not found');
-    }
-    this.data.filter(item => item.id !== entity.id).push(entity);
     return true;
   }
 
@@ -33,7 +22,6 @@ export default class {
   }
 
   find(id) {
-    const result = _.filter(this.data, entity => entity.id === id);
-    return result.length === 0 ? null : result[0];
+    return this.data.find(entity => entity.id === id);
   }
 }

@@ -1,9 +1,10 @@
 import BaseEntity from '../lib/BaseEntity';
 
 export default class Document extends BaseEntity {
-  constructor(name, type, comment) {
+  constructor(number, type, warehouse, comment) {
     super(comment);
-    this.name = name;
+    this.name = number;
     this.type = type;
+    this.warehouse = warehouse;
   }
 }

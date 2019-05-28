@@ -2,6 +2,7 @@ import StateMachine from 'javascript-state-machine';
 import BaseEntity from '../lib/BaseEntity';
 
 export default class User extends BaseEntity {
+  // This constraints need for validation user parametrs via schema-inspector
   static constraints = {
     type: User,
     properties: {
@@ -14,8 +15,8 @@ export default class User extends BaseEntity {
   };
 
 
-  constructor(role, firstName, lastName, login, password, comment) {
-    super(comment);
+  constructor(role, firstName, lastName, login, password, creator, comment) {
+    super(creator, comment);
     this.role = role;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -26,7 +27,7 @@ export default class User extends BaseEntity {
   }
 }
 
-
+// This is state machine for user state. Block and unblock him.
 StateMachine.factory(User, {
   init: 'active',
   transitions: [
